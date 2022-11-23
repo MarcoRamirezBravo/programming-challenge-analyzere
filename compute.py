@@ -1,5 +1,4 @@
 import sys
-
 if len(sys.argv) < 3 :
     print("Needs at least two argument")
     exit()
@@ -22,7 +21,6 @@ while True:
         contents.append(float(line))
     elif line == '':
         break
-
 total = 0
 pos = 0
 flag = 0
@@ -33,17 +31,14 @@ for each in contents:
         each=each-threshold
     total_temp = total
     total+=each
-
     if total>limit and flag==0:
         each= limit-total_temp
         flag=1
     elif total>limit and flag==1:
         each = 0.0
-
     contents[pos] = each
     pos=pos+1
     print(each)
-
 print(sum(contents))
 
 
